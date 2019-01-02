@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="Daniel&#39;s blog">
 <meta property="og:description" content="Union-Find Data Type (API)Find query: check if two objects are in the same component. Union command: connect two objects, i.e., replace components containing the two objects with their union. 12345678">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-02T11:14:09.333Z">
+<meta property="og:updated_time" content="2019-01-02T11:18:37.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Union Find">
 <meta name="twitter:description" content="Union-Find Data Type (API)Find query: check if two objects are in the same component. Union command: connect two objects, i.e., replace components containing the two objects with their union. 12345678">
@@ -473,11 +473,11 @@
 </li>
 <li><p>Simpler one-pass variant: make every other node in the path point to its grandparent. Though this is not optimal, but still can make the tree almost flat.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">root</span><span class="params">(<span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(id[i] != i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// set every other node in the path to point to its grandparent</span></span><br><span class="line">        id[i] = id[id[i]];</span><br><span class="line">        <span class="comment">// i now jumps to its grandparent</span></span><br><span class="line">        i = id[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
 <p><a href="https://d3c33hcgiwev3.cloudfront.net/_b65e7611894ba175de27bd14793f894a_15UnionFind.pdf?Expires=1546560000&amp;Signature=ivu20h0KYzYBnnBl5v7oNRHNyNHYbeeIxm4uOGH1XD8KiA-i1rPWdPX4ZcMp-Q8HVFYnZQr9fC5RG66D~4B1xaheauueiLTkJ1DUDgdA963YX1uYAzTiYAdEYgvgVyklv4RYfAjtMwiPdKoL38XgwiLrTRXKvCnEHMtFjYGC9O4_&amp;Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" target="_blank" rel="noopener">Algorithms, part 1 (Coursera)</a></p>
 </blockquote>
-</li>
-</ol>
 
       
     </div>
