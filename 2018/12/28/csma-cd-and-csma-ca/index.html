@@ -104,24 +104,24 @@
 
 
 
-  <meta name="description" content="Network LinksThere are two types of network links: point-to-point links and broadcast links.  A point-to-point link consists of a single sender at one end of the link and a single receiver at the othe">
+  <meta name="description" content="Network LinksThere are two types of network links: point-to-point links and broadcast links. A point-to-point link consists of a single sender at one end of the link and a single receiver at the other">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSMA&#x2F;CD and CSMA&#x2F;CA in Link Layer">
-<meta property="og:url" content="http://yoursite.com/2018/12/28/computer-networking-01/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/12/28/csma-cd-and-csma-ca/index.html">
 <meta property="og:site_name" content="Daniel&#39;s blog">
-<meta property="og:description" content="Network LinksThere are two types of network links: point-to-point links and broadcast links.  A point-to-point link consists of a single sender at one end of the link and a single receiver at the othe">
+<meta property="og:description" content="Network LinksThere are two types of network links: point-to-point links and broadcast links. A point-to-point link consists of a single sender at one end of the link and a single receiver at the other">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-01T06:59:06.859Z">
+<meta property="og:updated_time" content="2019-01-02T07:49:27.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSMA&#x2F;CD and CSMA&#x2F;CA in Link Layer">
-<meta name="twitter:description" content="Network LinksThere are two types of network links: point-to-point links and broadcast links.  A point-to-point link consists of a single sender at one end of the link and a single receiver at the othe">
+<meta name="twitter:description" content="Network LinksThere are two types of network links: point-to-point links and broadcast links. A point-to-point link consists of a single sender at one end of the link and a single receiver at the other">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/28/computer-networking-01/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/28/csma-cd-and-csma-ca/">
 
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/computer-networking-01/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/csma-cd-and-csma-ca/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SHAMELESS">
@@ -376,26 +376,24 @@
 
       
         <h2 id="Network-Links"><a href="#Network-Links" class="headerlink" title="Network Links"></a>Network Links</h2><p>There are two types of network links: point-to-point links and broadcast links.</p>
-<p> A <strong>point-to-point link</strong> consists of a single sender at one end of the link and a single receiver at the other end of the link. </p>
+<p>A <strong>point-to-point link</strong> consists of a single sender at one end of the link and a single receiver at the other end of the link. </p>
 <p>A <strong>broadcast link</strong> can have multiple sending and receiving nodes all connected to the same, single, shared broadcast channel. The term <em>broadcast</em> is used here because when any one node transmits a frame, the channel broadcasts the frame and each of the other nodes receives a copy. </p>
 <p>There is a  so-called <strong>multiple access problem</strong> in broadcast links. Because all nodes are capable of transmitting frames, more than two nodes can transmit frames at the same time. When this happens, all of the nodes receive multiple frames at the same time; that is, the transmitted frames <strong>collide</strong> at all of the receivers and the frames become corrupted.</p>
 <h2 id="Solutions-to-Multiple-Access-Problems"><a href="#Solutions-to-Multiple-Access-Problems" class="headerlink" title="Solutions to Multiple Access Problems"></a>Solutions to Multiple Access Problems</h2><p>There are three broad classes of methods to solve the <strong>multiple access problems</strong>: </p>
 <ul>
-<li><p>Channel Partition</p>
-</li>
-<li><p>Random Access </p>
-</li>
-<li><p>Taking Turn</p>
-</li>
+<li>Channel Partition</li>
+<li>Random Access </li>
+<li>Taking Turn</li>
 </ul>
 <p><strong>Carrier Sense Multiple Access with Collision Detection (CSMA/CD)</strong>  and <strong>Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA)</strong> belong to the second class of the solutions. CSMA/CS is usually used in Ethernet (802.3) and CSMA/CA is usually found in wireless LANs (802.11).</p>
 <p>CSMA/CD works as follows.  When a node wants to transmit frames into the broadcast channel, it first senses if the channel is busy (if another node is transmitting). If the channel is idle, the node immediately transmits the frame. If, on the other hand, the node senses that the channel is busy,  it waits until it senses no signal in the channel and then starts to transmit the frame. </p>
 <p>Similar to CSMA/CD, CSMA/CA also requires nodes to sense the channel before transmitting. However, in CSMA/CA, when a node found the channel is idle, it does not transmit immediately. In fact, it chooses a random time and counts down this time value when channel is sense idle. While the channel is sense busy during the count process, the counter remains frozen. When the counter reaches zero (this can only occur when the channel is idle),  the node transmits the frame.</p>
 <h2 id="The-Difference-and-Why"><a href="#The-Difference-and-Why" class="headerlink" title="The Difference and Why"></a>The Difference and Why</h2><p>In Ethernet’s CSMA/CD, a node begins transmitting as soon as the channel is sensed idle. With CSMA/CA in 802.11, however, the node refrains from transmitting while counting down, even when it senses the channel to be idle. <em>Why do CSMA/CD and CDMA/CA take such different approaches?</em></p>
-<p>Let’s consider a scenario in which two nodes  have data frames to transmit. but neither node transmits immediately because each senses that a third node is already transmitting. With Ethernet’s CSMA/CD, the two nodes would each transmit as soon as they detect that the third node has finished transmitting. This would cause a collision, which isn’t a serious issue in CSMA/CD, since both nodes would abort their transmissions and thus avoid the useless transmissions of the remainders of their frames. In 802.11, however, the situation is quite different. Because 802.11 does not detect a collision and abort transmission, a frame suffering a collision will be transmitted in its entirety. The goal in 802.11 is thus to avoid collisions whenever possible. In 802.11, if the two nodes sense the channel busy, they both immediately enter random waiting state, hopefully choosing different time values. If these values are indeed different, once the channel becomes idle, one of the two nodes will begin transmitting before the other, and the “losing node” will hear the “winning node’s” signal, freeze its counter, and refrain from transmitting until the winning node has completed its transmission. In this manner, a costly collision is avoided. </p>
+<p>Consider a scenario in which two nodes  have data frames to transmit. but neither node transmits immediately because each senses that a third node is already transmitting. With Ethernet’s CSMA/CD, the two nodes would each transmit as soon as they detect that the third node has finished transmitting. This would cause a collision, which isn’t a serious issue in CSMA/CD, since both nodes would abort their transmissions and thus avoid the useless transmissions of the remainders of their frames. </p>
+<p>In 802.11, however, the situation is quite different. Because 802.11 does not detect a collision and abort transmission, a frame suffering a collision will be transmitted in its entirety. The goal in 802.11 is thus to avoid collisions whenever possible. In 802.11, if the two nodes sense the channel busy, they both immediately enter random waiting state, hopefully choosing different time values. If these values are indeed different, once the channel becomes idle, one of the two nodes will begin transmitting before the other, and the “losing node” will hear the “winning node’s” signal, freeze its counter, and refrain from transmitting until the winning node has completed its transmission. In this manner, a costly collision is avoided. </p>
 <p>802.11 choose this approach mainly because it is usually used in communication between mobile devices. As we know, <strong>power efficiency</strong> is very important in mobile devices. When it is possible to avoid collision, which could save battery power, there is no reason not to do so.</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
-<p>Computer Networking A top-down Approach</p>
+<p>Computer Networking A Top-Down Approach</p>
 </blockquote>
 
       
@@ -436,6 +434,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/02/union-find/" rel="prev" title="Union Find">
+                Union Find <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -503,7 +505,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -518,7 +520,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
