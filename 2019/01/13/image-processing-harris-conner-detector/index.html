@@ -104,21 +104,37 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Operating System and Linux">
-<meta property="og:url" content="http://yoursite.com/Operating-System-and-Linux/index.html">
+  <meta name="description" content="Applications of Corners (Interest Points)When we want to stitch two images which contains different parts of the same scene, we need to find features that are distinctive and present in both images in">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Corner Detector">
+<meta property="og:url" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/index.html">
 <meta property="og:site_name" content="Daniel&#39;s blog">
+<meta property="og:description" content="Applications of Corners (Interest Points)When we want to stitch two images which contains different parts of the same scene, we need to find features that are distinctive and present in both images in">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-01T03:41:52.694Z">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/one.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/two.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/three.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/four.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/five.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/six.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/seven.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/eight.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/nine.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/ten.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/eleven.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/twelve.jpg">
+<meta property="og:updated_time" content="2019-01-15T03:40:59.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Operating System and Linux">
+<meta name="twitter:title" content="Corner Detector">
+<meta name="twitter:description" content="Applications of Corners (Interest Points)When we want to stitch two images which contains different parts of the same scene, we need to find features that are distinctive and present in both images in">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/one.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/Operating-System-and-Linux/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/">
 
 
 
@@ -128,7 +144,7 @@
   };
 </script>
 
-  <title>Operating System and Linux | Daniel's blog</title>
+  <title>Corner Detector | Daniel's blog</title>
   
 
 
@@ -272,64 +288,190 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SHAMELESS">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daniel's blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">Operating System and Linux
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">Corner Detector
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Digital-Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Digital Image Processing</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="Applications-of-Corners-Interest-Points"><a href="#Applications-of-Corners-Interest-Points" class="headerlink" title="Applications of Corners (Interest Points)"></a>Applications of Corners (Interest Points)</h2><p>When we want to stitch two images which contains different parts of the same scene, we need to find features that are distinctive and present in both images in order to match the two images.</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/one.jpg" title="Stitching two images">
+<p>Find distinctive points in these two images and match the same points.</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/two.jpg" title="Matching two images">
+<p>Merge two images according to the matched points.</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/three.jpg" title="Resulting image">
+<p>There are many other applications involving the detection of corners (interest points).</p>
+<ul>
+<li><p>Image alignment</p>
+</li>
+<li><p>3D Reconstruction</p>
+</li>
+<li><p>Motion tracking</p>
+</li>
+</ul>
+<h2 id="Basic-Idea"><a href="#Basic-Idea" class="headerlink" title="Basic Idea"></a>Basic Idea</h2><p>When shifting a window over the image, It can be observed that shifting the window over a corner in any direction causes a big change.</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/four.jpg" title="Shifting window">
+<p>To find corners, we need to find areas where shifting a window in any direction causes a big change. The change can be modeled as difference:</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/five.jpg" title="difference">
+<p>We then apply Taylor expansion:</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/six.jpg" title="Taylor expansion">
+<p>Writing in matrix form:</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/seven.jpg" title="Matrix form">
+<p>Note that <code>H</code> is a <code>2x2</code> matrix. Using <a href="https://www.zhihu.com/question/21874816" target="_blank" rel="noopener">eigenvecors and eigenvalues</a>, we have the following: </p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/eight.jpg" title="eigenvectors and eigenvalues of H">
+<img src="/2019/01/13/image-processing-harris-conner-detector/nine.jpg">
+<img src="/2019/01/13/image-processing-harris-conner-detector/ten.jpg">
+<img src="/2019/01/13/image-processing-harris-conner-detector/eleven.jpg">
+<img src="/2019/01/13/image-processing-harris-conner-detector/twelve.jpg">
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/02/union-find/" rel="next" title="Union Find">
+                <i class="fa fa-chevron-left"></i> Union Find
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -359,8 +501,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -438,6 +589,22 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Applications-of-Corners-Interest-Points"><span class="nav-number">1.</span> <span class="nav-text">Applications of Corners (Interest Points)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Idea"><span class="nav-number">2.</span> <span class="nav-text">Basic Idea</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

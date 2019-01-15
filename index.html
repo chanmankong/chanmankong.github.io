@@ -292,6 +292,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/13/image-processing-harris-conner-detector/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SHAMELESS">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Daniel's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/13/image-processing-harris-conner-detector/" class="post-title-link" itemprop="http://yoursite.com/index.html">Corner Detector</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Digital-Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Digital Image Processing</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Applications-of-Corners-Interest-Points"><a href="#Applications-of-Corners-Interest-Points" class="headerlink" title="Applications of Corners (Interest Points)"></a>Applications of Corners (Interest Points)</h2><p>When we want to stitch two images which contains different parts of the same scene, we need to find features that are distinctive and present in both images in order to match the two images.</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/one.jpg" title="Stitching two images">
+<p>Find distinctive points in these two images and match the same points.</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/two.jpg" title="Matching two images">
+<p>Merge two images according to the matched points.</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/three.jpg" title="Resulting image">
+<p>There are many other applications involving the detection of corners (interest points).</p>
+<ul>
+<li><p>Image alignment</p>
+</li>
+<li><p>3D Reconstruction</p>
+</li>
+<li><p>Motion tracking</p>
+</li>
+</ul>
+<h2 id="Basic-Idea"><a href="#Basic-Idea" class="headerlink" title="Basic Idea"></a>Basic Idea</h2><p>When shifting a window over the image, It can be observed that shifting the window over a corner in any direction causes a big change.</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/four.jpg" title="Shifting window">
+<p>To find corners, we need to find areas where shifting a window in any direction causes a big change. The change can be modeled as difference:</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/five.jpg" title="difference">
+<p>We then apply Taylor expansion:</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/six.jpg" title="Taylor expansion">
+<p>Writing in matrix form:</p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/seven.jpg" title="Matrix form">
+<p>Note that <code>H</code> is a <code>2x2</code> matrix. Using <a href="https://www.zhihu.com/question/21874816" target="_blank" rel="noopener">eigenvecors and eigenvalues</a>, we have the following: </p>
+<img src="/2019/01/13/image-processing-harris-conner-detector/eight.jpg" title="eigenvectors and eigenvalues of H">
+<img src="/2019/01/13/image-processing-harris-conner-detector/nine.jpg">
+<img src="/2019/01/13/image-processing-harris-conner-detector/ten.jpg">
+<img src="/2019/01/13/image-processing-harris-conner-detector/eleven.jpg">
+<img src="/2019/01/13/image-processing-harris-conner-detector/twelve.jpg">
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/union-find/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -635,7 +805,7 @@
 <h2 id="The-Difference-and-Why"><a href="#The-Difference-and-Why" class="headerlink" title="The Difference and Why"></a>The Difference and Why</h2><p>In Ethernet’s CSMA/CD, a node begins transmitting as soon as the channel is sensed idle. With CSMA/CA in 802.11, however, the node refrains from transmitting while counting down, even when it senses the channel to be idle. <em>Why do CSMA/CD and CDMA/CA take such different approaches?</em></p>
 <p>Consider a scenario in which two nodes  have data frames to transmit. but neither node transmits immediately because each senses that a third node is already transmitting. With Ethernet’s CSMA/CD, the two nodes would each transmit as soon as they detect that the third node has finished transmitting. This would cause a collision, which isn’t a serious issue in CSMA/CD, since both nodes would abort their transmissions and thus avoid the useless transmissions of the remainders of their frames. </p>
 <p>In 802.11, however, the situation is quite different. Because 802.11 does not detect a collision and abort transmission, a frame suffering a collision will be transmitted in its entirety. The goal in 802.11 is thus to avoid collisions whenever possible. In 802.11, if the two nodes sense the channel busy, they both immediately enter random waiting state, hopefully choosing different time values. If these values are indeed different, once the channel becomes idle, one of the two nodes will begin transmitting before the other, and the “losing node” will hear the “winning node’s” signal, freeze its counter, and refrain from transmitting until the winning node has completed its transmission. In this manner, a costly collision is avoided. </p>
-<p>802.11 choose this approach mainly because it is usually used in communication between mobile devices. As we know, <strong>power efficiency</strong> is very important in mobile devices. When it is possible to avoid collision, which could save battery power, there is no reason not to do so.</p>
+<p>802.11 chooses this approach mainly because it is usually used in communication between mobile devices. As we know, <strong>power efficiency</strong> is very important in mobile devices. When it is possible to avoid collision, which could save battery power, there is no reason not to do so.</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote>
 <p>Computer Networking A Top-Down Approach</p>
 </blockquote>
@@ -854,7 +1024,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -871,7 +1041,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
